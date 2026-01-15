@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client')
 const Stripe = require('stripe')
 
 const prisma = new PrismaClient()
-const stripe = new Stripe('sk_test_51Shx1gGiBK03UQWzn5529zHH2SwVtkdVkRM7M66QVLjSLcZXvYwYgzk1sb2noUZQ5hhctJU98dPYnPRyIAppKlEk00DVEU3EQv')
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 async function fixWorkspaceBilling(email) {
   try {
